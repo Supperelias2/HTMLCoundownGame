@@ -91,6 +91,31 @@ body {
     color: #aaaaaa;
 }
 
+/* Leaderboard styles */
+#leaderboard-container {
+    margin-top: 40px;
+    max-width: 600px;
+    width: 100%;
+}
+
+#leaderboard-container h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#leaderboard-list {
+    list-style: none;
+    padding: 0;
+}
+
+#leaderboard-list li {
+    background-color: #333;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
 /* Responsive styling */
 @media (max-width: 600px) {
     #instruction-screen h1 {
@@ -116,6 +141,14 @@ body {
     }
 
     #quote {
+        font-size: 1em;
+    }
+
+    #leaderboard-container h2 {
+        font-size: 1.5em;
+    }
+
+    #leaderboard-list li {
         font-size: 1em;
     }
 }

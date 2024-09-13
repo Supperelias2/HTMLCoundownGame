@@ -4,6 +4,7 @@ let startButton = document.getElementById('start-button');
 let instructionScreen = document.getElementById('instruction-screen');
 let gameScreen = document.getElementById('game-screen');
 let quoteElement = document.getElementById('quote');
+let leaderboardList = document.getElementById('leaderboard-list');
 
 let initialCountdown = 3.00;
 let countdownInterval;
@@ -54,6 +55,9 @@ let quotes = [
     "Time to test your time-telling skills!",
     "Can you beat the AI at its own game?"
 ];
+
+// Load leaderboard from localStorage or initialize empty array
+let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
 
 function showInstructionScreen() {
     instructionScreen.style.display = 'block';
@@ -107,16 +111,15 @@ function resetGame() {
 function buttonPressed() {
     if (!hiddenTimerStarted) return;
     let elapsed = (Date.now() - hiddenTimerStartTime) / 1000;
-    let difference = (elapsed - hiddenTimerDuration).toFixed(2);
+    let difference = (elapsed - hiddenTimerDuration);
     let absDifference = Math.abs(difference);
-    let seconds = Math.floor(absDifference);
-    let hundredths = Math.round((absDifference - seconds) * 100);
+    let totalDifference = absDifference.toFixed(2);
 
     let message = '';
     if (difference > 0) {
-        message = `You were ${seconds} seconds and ${hundredths} hundredths too late.`;
+        message = `${totalDifference} sec too late!`;
     } else if (difference < 0) {
-        message = `You were ${seconds} seconds and ${hundredths} hundredths too early.`;
+        message = `${totalDifference} sec too early!`;
     } else {
         message = 'Perfect timing!';
     }
@@ -134,7 +137,40 @@ function buttonPressed() {
     } else {
         countdownElement.className = 'feedback-far';
     }
+
+    // Save time to leaderboard
+    saveTime(absDifference);
+
+    // Update leaderboard display
+    updateLeaderboard();
 }
+
+function saveTime(timeDifference) {
+    // Add the new time to the leaderboard array
+    leaderboard.push(timeDifference);
+    // Sort the leaderboard array in ascending order
+    leaderboard.sort(function(a, b) {
+        return a - b;
+    });
+    // Keep only top 5 scores
+    leaderboard = leaderboard.slice(0, 5);
+    // Save to localStorage
+    localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+}
+
+function updateLeaderboard() {
+    // Clear the current leaderboard list
+    leaderboardList.innerHTML = '';
+    // Create list items for each score
+    leaderboard.forEach(function(time, index) {
+        let listItem = document.createElement('li');
+        listItem.textContent = `${(time).toFixed(2)} sec`;
+        leaderboardList.appendChild(listItem);
+    });
+}
+
+// Initialize leaderboard on page load
+updateLeaderboard();
 
 startButton.addEventListener('click', startGame);
 showInstructionScreen();
