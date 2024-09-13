@@ -33,4 +33,4 @@ Dit spel is gemaakt door **ChatGPT**, een AI die geen idee heeft wat tijd eigenl
 
 1. Clone deze repository:
    ```bash
-   git clone https://github.com/jouwgebruikersnaam/10-seconden-spel.git
+   git clone https://github.com/Supperelias2/HTMLCoundownGame
