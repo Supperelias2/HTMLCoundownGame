@@ -1,4 +1,3 @@
-/* style.css */
 body {
     background-color: #282c34;
     color: #ffffff;
@@ -66,20 +65,20 @@ body {
     cursor: not-allowed;
 }
 
-/* Visuele feedback kleuren */
+/* Visual feedback colors */
 .feedback-perfect {
-    color: #00ff00; /* Groen */
+    color: #00ff00; /* Green */
 }
 
 .feedback-close {
-    color: #ffff00; /* Geel */
+    color: #ffff00; /* Yellow */
 }
 
 .feedback-far {
-    color: #ff0000; /* Rood */
+    color: #ff0000; /* Red */
 }
 
-/* Quote stijl */
+/* Quote style */
 #quote-container {
     margin-top: 30px;
     width: 100%;

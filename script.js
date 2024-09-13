@@ -1,4 +1,3 @@
-// script.js
 let countdownElement = document.getElementById('countdown');
 let gameButton = document.getElementById('game-button');
 let startButton = document.getElementById('start-button');
@@ -10,30 +9,50 @@ let initialCountdown = 3.00;
 let countdownInterval;
 let hiddenTimerStarted = false;
 let hiddenTimerStartTime;
-let hiddenTimerDuration = 10.00; // 10 seconden
+let hiddenTimerDuration = 10.00; // 10 seconds
 
 // Quotes array
 let quotes = [
-    "Gemaakt door ChatGPT, een AI zonder tijdsbesef.",
-    "Als 10 seconden te lang voelen, ben je in goed gezelschap.",
-    "Dit spel is goedgekeurd door procrastinators wereldwijd.",
-    "Geen pixels raakten oververhit tijdens het maken van dit spel.",
-    "10 seconden: sneller dan je wifi maar trager dan je oma.",
-    "Gecodeerd door een AI die geen klok kan lezen.",
-    "Als je wint, krijg je... helemaal niets!",
-    "Het aftellen begint... nu! Of was het toch straks?",
-    "Bedankt voor het spelen! Je interne klok is nu geüpdatet.",
-    "Als tijd geld is, dan ben je nu 10 seconden armer.",
-    "Gegarandeerd 0% kans op het winnen van een prijs.",
-    "Heb je al op de knop gedrukt? Te vroeg!",
-    "Dit spel is beter dan niets doen. Toch?",
-    "De tijd vliegt... of staat stil. Wie zal het zeggen?",
-    "Gemaakt met 1's, 0's en een beetje magie.",
-    "Als je dit leest, ben je waarschijnlijk afgeleid.",
-    "Je hebt 10 seconden om deze quote te lezen. Succes!",
-    "Dit spel is jouw dagelijkse dosis geduldtraining.",
-    "Verlies je gevoel voor tijd, niet je gevoel voor humor.",
-    "Gemaakt door iemand die ook niet tot 10 kan tellen."
+    "Made by an AI who can't tell time.",
+    "If 10 seconds feels too long, you're not alone.",
+    "This game is procrastinator-approved!",
+    "No pixels were harmed in the making of this game.",
+    "10 seconds: faster than your Wi-Fi, slower than a sloth.",
+    "Programmed by an AI that can't read clocks.",
+    "Win or lose, you get... absolutely nothing!",
+    "The countdown begins... now! Or maybe later?",
+    "Thanks for playing! Your internal clock is now updated.",
+    "If time is money, you're now 10 seconds poorer.",
+    "Guaranteed 0% chance of winning a prize.",
+    "Did you press the button yet? Too soon!",
+    "This game is better than doing nothing. Right?",
+    "Time flies... or stands still. Who knows?",
+    "Built with 1's, 0's, and a bit of magic.",
+    "If you're reading this, you're probably distracted.",
+    "You have 10 seconds to read this quote. Go!",
+    "Your daily dose of patience training.",
+    "Lose your sense of time, not your sense of humor.",
+    "Created by someone who also can't count to 10.",
+    "Warning: May cause an existential crisis about time.",
+    "Time's up! Or is it?",
+    "Loading... please wait 10 seconds.",
+    "Is it me, or did 10 seconds just get longer?",
+    "You just wasted 10 seconds. Want to waste more?",
+    "Time is an illusion. Lunchtime doubly so.",
+    "Feeling lucky? Try timing 10 seconds!",
+    "Achievement unlocked: Master of Time (Not).",
+    "Press the button. Regret nothing.",
+    "This game has no bugs. Just features.",
+    "Don't worry, the button won't bite.",
+    "Time waits for no one, except in this game.",
+    "If at first you don't succeed, blame the timer.",
+    "Is it 10 seconds yet? Only one way to find out.",
+    "They say patience is a virtue. Prove it!",
+    "Ready, set, wait...",
+    "Time you enjoy wasting is not wasted time.",
+    "Just when you think you nailed it... you didn't.",
+    "Time to test your time-telling skills!",
+    "Can you beat the AI at its own game?"
 ];
 
 function showInstructionScreen() {
@@ -63,7 +82,7 @@ function startInitialCountdown() {
 }
 
 function startHiddenTimer() {
-    countdownElement.textContent = 'Druk op de knop na 10 seconden';
+    countdownElement.textContent = 'Press the button after 10 seconds';
     gameButton.disabled = false;
     hiddenTimerStarted = true;
     hiddenTimerStartTime = Date.now();
@@ -72,7 +91,7 @@ function startHiddenTimer() {
 function resetGame() {
     gameButton.removeEventListener('click', resetGame);
     gameButton.addEventListener('click', buttonPressed);
-    gameButton.textContent = 'Druk hier';
+    gameButton.textContent = 'Press Here';
     gameButton.disabled = true;
     countdownElement.textContent = '3.00';
     countdownElement.className = '';
@@ -95,19 +114,19 @@ function buttonPressed() {
 
     let message = '';
     if (difference > 0) {
-        message = `Je was ${seconds} seconden en ${hundredths} honderdstes te laat.`;
+        message = `You were ${seconds} seconds and ${hundredths} hundredths too late.`;
     } else if (difference < 0) {
-        message = `Je was ${seconds} seconden en ${hundredths} honderdstes te vroeg.`;
+        message = `You were ${seconds} seconds and ${hundredths} hundredths too early.`;
     } else {
         message = 'Perfect timing!';
     }
 
     countdownElement.textContent = message;
-    gameButton.textContent = 'Opnieuw spelen';
+    gameButton.textContent = 'Play Again';
     gameButton.removeEventListener('click', buttonPressed);
     gameButton.addEventListener('click', resetGame);
 
-    // Visuele feedback
+    // Visual feedback
     if (absDifference < 0.10) {
         countdownElement.className = 'feedback-perfect';
     } else if (absDifference < 0.50) {

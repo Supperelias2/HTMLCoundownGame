@@ -1,36 +1,36 @@
-# 10 Seconden Spel ⏳🎮
+# 10 Seconds Game ⏳🎮
 
-Welkom bij **het 10 Seconden Spel**! Een uitdagend spel dat precies nul prijzen oplevert, maar wel uren van je leven opslurpt terwijl je probeert te raden wanneer 10 seconden precies voorbij zijn. 🕰️ 
+Welcome to the **10 Seconds Game**! A challenging game that offers absolutely zero prizes but will happily consume hours of your life as you try to guess when exactly 10 seconds have passed. 🕰️
 
-Dit spel is gemaakt door **ChatGPT**, een AI die geen idee heeft wat tijd eigenlijk betekent. Dus als het spel te moeilijk is... geef de schuld aan een machine. 🤖
+This game is created by **ChatGPT**, an AI that has no real sense of time. So if the game feels too difficult... you can blame a machine. 🤖
 
-## 📜 Hoe werkt het?
+## 📜 How Does It Work?
 
-1. **Het spel begint** met een aftelling van 3 seconden, inclusief milliseconden, zodat je alvast een idee krijgt van hoe snel of langzaam tijd is.
-2. Daarna moet je **exact 10 seconden** wachten en dan op de knop drukken. Denk je dat je interne klok perfect is? Bewijs het maar!
-3. **Visuele feedback** vertelt je hoe goed (of hoe dramatisch slecht) je het hebt gedaan:
-   - Groen: Perfecte timing! (bijna dan...)
-   - Geel: Je bent heel dichtbij, maar nog niet daar.
-   - Rood: Sorry, maar je hebt meer tijd nodig... letterlijk.
-4. Een **grappige quote** onderaan verandert elke keer dat je het spel opnieuw start, zodat je niet alleen gefrustreerd raakt door de tijd, maar ook kunt lachen. 🤣
+1. **The game starts** with a 3-second countdown, including hundredths of a second, to give you a sense of how quickly or slowly time is passing.
+2. Then you need to **wait exactly 10 seconds** and press the button. Think your internal clock is perfect? Prove it!
+3. **Visual feedback** shows you how close (or hilariously far) you were from the target time:
+   - **Green**: Perfect timing! (Well, almost...)
+   - **Yellow**: You're close, but not quite there.
+   - **Red**: Sorry, but you might need a new watch.
+4. A **random funny quote** appears at the bottom each time you play, so you can laugh while questioning your life choices. 🤣
 
-## 📦 Functionaliteiten
+## 📦 Features
 
-- **3-seconden aftelling** met milliseconden zodat je voorbereid bent.
-- Een **onzichtbare timer** van 10 seconden die je mentaal moet tellen.
-- **Visuele feedback** om te laten zien hoe dicht je bij het doel was (spoiler: niet heel dichtbij).
-- **Random grappige quotes** onderaan de pagina, omdat lachen belangrijk is, vooral na je tiende mislukte poging.
-- **AI gemaakt** door ChatGPT, een AI die net zoals jij probeert tijd te begrijpen. (Nee, we begrijpen het ook niet echt.)
+- **3-second countdown** with hundredths of a second to prepare you.
+- An **invisible 10-second timer** you have to mentally track.
+- **Visual feedback** to show how well (or poorly) you did.
+- **Random humorous quotes** to keep you entertained between attempts.
+- **AI-generated** by ChatGPT, an AI that, like you, is trying to understand time. (Spoiler: We don't get it either.)
 
-## 🎨 Wat maakt dit spel zo leuk?
+## 🎨 What Makes This Game Fun?
 
-- **Het is een geduldtest**: Iedereen denkt dat ze 10 seconden perfect kunnen timen... totdat ze dit proberen.
-- **Je leert niets**, maar je zult wel ontdekken hoe frustrerend het is om een milliseconde te missen.
-- **Unieke humor**: De quotes zullen je laten lachen, zelfs als je 10 seconden niet kunt timen.
-- **Geen high scores**, geen prijzen... gewoon pure, tijdloze fun. (Zie je wat ik daar deed? 😉)
+- **It's a test of patience**: Everyone thinks they can time 10 seconds perfectly... until they try.
+- **You won't learn anything**, but you'll discover how off your internal clock really is.
+- **Unique humor**: The quotes will make you laugh, even as you fail miserably.
+- **No high scores**, no prizes... just pure, timeless fun. (See what we did there? 😉)
 
-## 📖 Installatie
+## 📖 Installation
 
-1. Clone deze repository:
+1. Clone this repository:
    ```bash
-   git clone https://github.com/Supperelias2/HTMLCoundownGame
+   git clone https://github.com/yourusername/10-seconds-game.git
