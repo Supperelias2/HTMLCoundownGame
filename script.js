@@ -4,6 +4,7 @@ let gameButton = document.getElementById('game-button');
 let startButton = document.getElementById('start-button');
 let instructionScreen = document.getElementById('instruction-screen');
 let gameScreen = document.getElementById('game-screen');
+let quoteElement = document.getElementById('quote');
 
 let initialCountdown = 3.00;
 let countdownInterval;
@@ -11,9 +12,34 @@ let hiddenTimerStarted = false;
 let hiddenTimerStartTime;
 let hiddenTimerDuration = 10.00; // 10 seconden
 
+// Quotes array
+let quotes = [
+    "Gemaakt door ChatGPT, een AI zonder tijdsbesef.",
+    "Als 10 seconden te lang voelen, ben je in goed gezelschap.",
+    "Dit spel is goedgekeurd door procrastinators wereldwijd.",
+    "Geen pixels raakten oververhit tijdens het maken van dit spel.",
+    "10 seconden: sneller dan je wifi maar trager dan je oma.",
+    "Gecodeerd door een AI die geen klok kan lezen.",
+    "Als je wint, krijg je... helemaal niets!",
+    "Het aftellen begint... nu! Of was het toch straks?",
+    "Bedankt voor het spelen! Je interne klok is nu geüpdatet.",
+    "Als tijd geld is, dan ben je nu 10 seconden armer.",
+    "Gegarandeerd 0% kans op het winnen van een prijs.",
+    "Heb je al op de knop gedrukt? Te vroeg!",
+    "Dit spel is beter dan niets doen. Toch?",
+    "De tijd vliegt... of staat stil. Wie zal het zeggen?",
+    "Gemaakt met 1's, 0's en een beetje magie.",
+    "Als je dit leest, ben je waarschijnlijk afgeleid.",
+    "Je hebt 10 seconden om deze quote te lezen. Succes!",
+    "Dit spel is jouw dagelijkse dosis geduldtraining.",
+    "Verlies je gevoel voor tijd, niet je gevoel voor humor.",
+    "Gemaakt door iemand die ook niet tot 10 kan tellen."
+];
+
 function showInstructionScreen() {
     instructionScreen.style.display = 'block';
     gameScreen.style.display = 'none';
+    quoteElement.textContent = '';
 }
 
 function startGame() {
@@ -49,9 +75,14 @@ function resetGame() {
     gameButton.textContent = 'Druk hier';
     gameButton.disabled = true;
     countdownElement.textContent = '3.00';
-    countdownElement.className = ''; // Reset class
+    countdownElement.className = '';
     hiddenTimerStarted = false;
     startInitialCountdown();
+
+    // Update quote
+    let randomIndex = Math.floor(Math.random() * quotes.length);
+    let randomQuote = quotes[randomIndex];
+    quoteElement.textContent = randomQuote;
 }
 
 function buttonPressed() {
@@ -78,13 +109,10 @@ function buttonPressed() {
 
     // Visuele feedback
     if (absDifference < 0.10) {
-        // Minder dan 0.10 seconden verschil
         countdownElement.className = 'feedback-perfect';
     } else if (absDifference < 0.50) {
-        // Minder dan 0.50 seconden verschil
         countdownElement.className = 'feedback-close';
     } else {
-        // Meer dan 0.50 seconden verschil
         countdownElement.className = 'feedback-far';
     }
 }
