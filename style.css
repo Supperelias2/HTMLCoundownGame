@@ -13,6 +13,36 @@ body {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
+    align-items: center;
+}
+
+#instruction-screen {
+    max-width: 600px;
+}
+
+#instruction-screen h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#instruction-screen p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+#start-button {
+    font-size: 24px;
+    padding: 15px 30px;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #countdown {
@@ -32,4 +62,17 @@ body {
 #game-button:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
+}
+
+/* Visuele feedback kleuren */
+.feedback-perfect {
+    color: #00ff00; /* Groen */
+}
+
+.feedback-close {
+    color: #ffff00; /* Geel */
+}
+
+.feedback-far {
+    color: #ff0000; /* Rood */
 }

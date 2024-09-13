@@ -8,8 +8,18 @@
 </head>
 <body>
     <div id="game-container">
-        <div id="countdown">3.00</div>
-        <button id="game-button" disabled>Druk hier</button>
+        <!-- Instructie scherm -->
+        <div id="instruction-screen">
+            <h1>Welkom bij het 10 Seconden Spel</h1>
+            <p>Probeer precies na 10 seconden op de knop te drukken. Je zult geen timer zien, dus vertrouw op je eigen gevoel voor tijd!</p>
+            <button id="start-button">Start Spel</button>
+        </div>
+
+        <!-- Spel scherm -->
+        <div id="game-screen" style="display: none;">
+            <div id="countdown">3.00</div>
+            <button id="game-button" disabled>Druk hier</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

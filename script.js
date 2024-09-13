@@ -1,12 +1,26 @@
 // script.js
 let countdownElement = document.getElementById('countdown');
 let gameButton = document.getElementById('game-button');
+let startButton = document.getElementById('start-button');
+let instructionScreen = document.getElementById('instruction-screen');
+let gameScreen = document.getElementById('game-screen');
 
 let initialCountdown = 3.00;
 let countdownInterval;
 let hiddenTimerStarted = false;
 let hiddenTimerStartTime;
 let hiddenTimerDuration = 10.00; // 10 seconden
+
+function showInstructionScreen() {
+    instructionScreen.style.display = 'block';
+    gameScreen.style.display = 'none';
+}
+
+function startGame() {
+    instructionScreen.style.display = 'none';
+    gameScreen.style.display = 'flex';
+    resetGame();
+}
 
 function startInitialCountdown() {
     let startTime = Date.now();
@@ -35,6 +49,7 @@ function resetGame() {
     gameButton.textContent = 'Druk hier';
     gameButton.disabled = true;
     countdownElement.textContent = '3.00';
+    countdownElement.className = ''; // Reset class
     hiddenTimerStarted = false;
     startInitialCountdown();
 }
@@ -60,7 +75,19 @@ function buttonPressed() {
     gameButton.textContent = 'Opnieuw spelen';
     gameButton.removeEventListener('click', buttonPressed);
     gameButton.addEventListener('click', resetGame);
+
+    // Visuele feedback
+    if (absDifference < 0.10) {
+        // Minder dan 0.10 seconden verschil
+        countdownElement.className = 'feedback-perfect';
+    } else if (absDifference < 0.50) {
+        // Minder dan 0.50 seconden verschil
+        countdownElement.className = 'feedback-close';
+    } else {
+        // Meer dan 0.50 seconden verschil
+        countdownElement.className = 'feedback-far';
+    }
 }
 
-gameButton.addEventListener('click', buttonPressed);
-startInitialCountdown();
+startButton.addEventListener('click', startGame);
+showInstructionScreen();
